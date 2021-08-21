@@ -35,35 +35,35 @@ document.getElementById('memory_btn_plus').addEventListener('click', function ()
 });
 
 //update storage
-function updateStoragePrice(is1TB, is512GB) {
-    var storage = document.getElementById('storage-cost');
-    if (is1TB) {
-        storage.innerText = 180;
+function updateStoragePrice(ssd) {
+    var ssdCost = document.getElementById("storage-cost");
+    if (ssd == 256) {
+        ssdCost.innerText = 0;
     }
-    else if (is512GB) {
-        storage.innerText = 100;
+    if (ssd == 512) {
+        ssdCost.innerText = 100;
     }
-    else {
-        storage.innerText = 0;
+    if (ssd == 1024) {
+        ssdCost.innerText = 180;
     }
 }
 
 //storage 256gb
-document.getElementById('storage-btn').addEventListener('click', function () {
-    const storageCost256 = document.getElementById('storage-cost').innerText = 0;
-    // updateStoragePrice(false);
+var ssd256 = document.getElementById('storage-256');
+ssd256.addEventListener("click", function () {
+    StorageCharge = updateStoragePrice(256);
     totalPrice();
 });
 //storage 512gb
-document.getElementById('storage-btn-add').addEventListener('click', function () {
-    const storageCost512 = document.getElementById('storage-cost').innerText = 100;
-    //updateStoragePrice(false);
+var ssd512 = document.getElementById('storage-512');
+ssd512.addEventListener("click", function () {
+    StorageCharge = updateStoragePrice(512);
     totalPrice();
 });
 //storage 1TB
-document.getElementById('storage-btn-plus').addEventListener('click', function () {
-    const storageCost1 = document.getElementById('storage-cost').innerText = 180;
-    // updateStoragePrice(true);
+var ssd1024 = document.getElementById('storage-1TB');
+ssd1024.addEventListener("click", function () {
+    updateStoragePrice(1024);
     totalPrice();
 });
 
@@ -77,17 +77,16 @@ function updateDeliveryCost(isDeliveryCharge) {
         delivery.innerText = 0;
     }
 }
-//Delivery Cost
+//prime Delivery 
 document.getElementById('prime-delivery').addEventListener('click', function () {
     updateDeliveryCost(false);
     totalPrice();
 });
+//delivery charge
 document.getElementById('delivery-charge').addEventListener('click', function () {
     updateDeliveryCost(true);
     totalPrice();
 });
-
-
 //pomo code apply
 document.getElementById('apply-btn').addEventListener('click', function () {
     const textField = document.getElementById('text-field');
@@ -98,6 +97,7 @@ document.getElementById('apply-btn').addEventListener('click', function () {
     }
     textField.value = '';
 });
+//Total
 function total() {
     const bestPrice = document.getElementById('best-price');
     const bestPriceTotal = parseFloat(bestPrice.innerText);

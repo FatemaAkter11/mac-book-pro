@@ -94,8 +94,20 @@ document.getElementById('apply-btn').addEventListener('click', function () {
     const userText = textField.value;
     //check input
     if (userText == 'stevekaku') {
-        const finalTotal = document.getElementById('final-total');
-
+        total();
     }
     textField.value = '';
 });
+function total() {
+    const bestPrice = document.getElementById('best-price');
+    const bestPriceTotal = parseFloat(bestPrice.innerText);
+    const memoryCost = document.getElementById('memory-cost');
+    const memoryCostTotal = parseFloat(memoryCost.innerText);
+    const storageCost = document.getElementById('storage-cost');
+    const storageCostTotal = parseFloat(storageCost.innerText);
+    const deliveryCost = document.getElementById('delivery-cost');
+    const deliveryCostTotal = parseFloat(deliveryCost.innerText);
+    const totalAll = (bestPriceTotal + memoryCostTotal + storageCostTotal + deliveryCostTotal) * 0.8;
+    const finalTotal = document.getElementById('final-total');
+    finalTotal.innerText = totalAll;
+}

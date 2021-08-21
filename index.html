@@ -17,11 +17,12 @@
         <section class="mt-8">
             <div class="grid grid-cols-2 gap-4">
                 <div class="p-8">
-                    <img src="images/mac.png" alt="">
+                    <img class="w-3/4 ml-24" src="images/mac.png" alt="">
                 </div>
                 <div class="p-8 ">
-                    <h1 class="text-4xl font-semibold">Customize Your Blue 24-inch iMac with Apple M1 chip.</h1>
-                    <h3 class="mt-2">Apple M1 chip with 8-core CPU with 4 performance cores and 4 efficiency cores,
+                    <h1 class="text-4xl font-semibold w-3/4">Customize Your Blue 24-inch iMac with Apple M1 chip.</h1>
+                    <h3 class="mt-2 w-5/6">Apple M1 chip with 8-core CPU with 4 performance cores and 4 efficiency
+                        cores,
                         7-core GPU, and
                         16-core Neural Engine 8GB unified memory 256GB SSD storage Two Thunderbolt / USB 4 ports Magic
                         Mouse Magic Keyboard - US English
@@ -29,27 +30,41 @@
                     <!-- Memory  -->
                     <div>
                         <h2 class="text-2xl font-medium mt-8">Memory</h2>
-                        <button class="border-2 border-gray-300 px-4 mt-4">8GB unified memory</button>
-                        <button class="border-2 border-gray-300 px-4 mt-4">16GB unified memory</button>
+                        <button id="memory_btn"
+                            class="border-2 border-gray-300 px-4 mt-4 focus:ring-2 focus:ring-gray-600">8GB
+                            unified memory</button>
+                        <button id="memory_btn_plus"
+                            class="border-2 border-gray-300 px-4 mt-4 focus:ring-2 focus:ring-gray-600">16GB unified
+                            memory</button>
                     </div>
 
                     <!-- storage  -->
                     <div>
                         <h2 class="text-2xl font-medium mt-8">Storage</h2>
-                        <button class="border-2 border-gray-300 px-4 mt-4">256GB SSD storage</button>
-                        <button class="border-2 border-gray-300 px-4 mt-4">512GB SSD storage</button>
-                        <button class="border-2 border-gray-300 px-4 mt-4">1TB SSD storage </button>
+                        <button id="storage-btn"
+                            class="border-2 border-gray-300 px-4 mt-4 focus:ring-2 focus:ring-gray-600">256GB SSD
+                            storage</button>
+                        <button id="storage-btn-add"
+                            class="border-2 border-gray-300 px-4 mt-4 focus:ring-2 focus:ring-gray-600">512GB SSD
+                            storage</button>
+                        <button id="storage-btn-plus"
+                            class="border-2 border-gray-300 px-4 mt-4 focus:ring-2 focus:ring-gray-600">1TB SSD
+                            storage </button>
                     </div>
 
                     <!-- choose delivery option  -->
                     <div>
                         <h2 class="text-2xl font-medium mt-8">choose your delivery option</h2>
-                        <button class="border-2 border-gray-300 px-4 mt-4">Friday, August 25 Free Prime
+                        <button id="prime-delivery"
+                            class="border-2 border-gray-300 px-4 mt-4 focus:ring-2 focus:ring-gray-600">Friday,
+                            August 25 Free Prime
                             Delivery</button>
-                        <button class="border-2 border-gray-300 px-4 mt-4">Friday, August 21 Delivery Charge
+                        <button id="delivery-charge"
+                            class="border-2 border-gray-300 px-4 mt-4 focus:ring-2 focus:ring-gray-600">Friday,
+                            August 21 Delivery Charge
                             $20</button>
                     </div>
-                    <!-- total price  -->
+                    <!--  price area  -->
 
                     <div class="grid grid-cols-2 mt-8">
                         <div class="grid grid divide-y divide-black">
@@ -66,29 +81,34 @@
                         </div>
 
                         <div class="-mx-12">
-                            <h5>$<span id="">1299</span></h5>
-                            <h5>$<span id="">0</span></h5>
-                            <h5>$<span id="">0</span></h5>
-                            <h5>$<span id="">0</span></h5>
-                            <h5>$<span id="">1299</span></h5>
+                            <h5>$<span id="best-price">1299</span></h5>
+                            <h5>$<span id="memory-cost">0</span></h5>
+                            <h5>$<span id="storage-cost">0</span></h5>
+                            <h5>$<span id="delivery-cost">0</span></h5>
+                            <h5>$<span id="total-price">1299</span></h5>
                         </div>
                     </div>
 
                     <!-- pomo code  -->
                     <div class="mt-8">
                         <h3 class="font-light">Add Pomo Code</h3>
-                        <input class="border-2 border-gray-300 px-4 mt-2" type="text">
-                        <button class="bg-red-600 px-4 py-1 rounded text-white">Apply</button>
+                        <input id="text-field" class="border-2 border-gray-300 px-4 mt-2" type="text">
+                        <button id="apply-btn" class="bg-red-600 px-4 py-1 rounded text-white">Apply</button>
                     </div>
-
 
                 </div>
 
+
             </div>
             <!-- total -->
-            <div class="mt-8">
-                <hr>
-                <h5 class="text-2xl font-medium my-4 mx-96">Total: $1299</h5>
+            <hr>
+            <div class="grid grid-cols-2 mt-8 w-11/12">
+                <div class="mx-auto">
+                    <h5 class="text-3xl font-medium ml-96">Total:</h5>
+                </div>
+                <div class="-mx-16">
+                    <h5 class="text-3xl font-medium">$<span id="final-total">1299</span></h5>
+                </div>
             </div>
 
         </section>
